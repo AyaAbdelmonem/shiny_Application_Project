@@ -14,6 +14,7 @@ shinyUI(fluidPage(
   # Application title
   titlePanel("predict Temprature based on Month/day "),
   
+  
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     
@@ -32,7 +33,8 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      
+      h3("Summary"),
+      h4("We are using airquality dataset  to predict the temprature based on month or day value , I'm using two separated models for both month and day supported with plots .  "),
       plotOutput("plot1"),
       plotOutput("plot2"),
       h3("Predicted Temprature based on month :" ),
