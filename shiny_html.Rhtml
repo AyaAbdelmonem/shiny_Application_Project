@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/3A4972D8-DDD3-0545-92AD-9D28504185B3/main.js" charset="UTF-8"></script><script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.12.4];shiny[1.0.5];ionrangeslider[2.1.6];strftime[0.9.2];bootstrap[3.3.7]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
+<link href="shared/ionrangeslider/css/ion.rangeSlider.skinShiny.css" rel="stylesheet" />
+<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="shared/strftime/strftime-min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>  <title>predict Temprature based on Month/day </title>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h2>predict Temprature based on Month/day </h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="well">
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="sliderMonth">What Month do you need to get the temprature ?</label>
+            <input class="js-range-slider" id="sliderMonth" data-min="5" data-max="9" data-from="7" data-step="1" data-grid="true" data-grid-num="4" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-keyboard-step="25" data-data-type="number"/>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="sliderDay">What is the day  you need to get the temprature ?</label>
+            <input class="js-range-slider" id="sliderDay" data-min="1" data-max="30" data-from="15" data-step="1" data-grid="true" data-grid-num="9.66666666666667" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-keyboard-step="3.44827586206897" data-data-type="number"/>
+          </div>
+          <div class="form-group shiny-input-container">
+            <div class="checkbox">
+              <label>
+                <input id="showModel1" type="checkbox" checked="checked"/>
+                <span>show/hide predict by month</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <div class="checkbox">
+              <label>
+                <input id="showModel2" type="checkbox" checked="checked"/>
+                <span>show/hide predict by day</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-8">
+        <h3>Summary</h3>
+        <h4>We are using airquality dataset  to predict the temprature based on month or day value , I'm using two separated models for both month and day supported with plots .  </h4>
+        <div id="plot1" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+        <div id="plot2" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+        <h3>Predicted Temprature based on month :</h3>
+        <div id="pred1" class="shiny-text-output"></div>
+        <h3>predicted Temprature based on day :</h3>
+        <div id="pred2" class="shiny-text-output"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

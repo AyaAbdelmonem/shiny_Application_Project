@@ -6,6 +6,7 @@
 #
 
 library(shiny)
+library(plotly)
 library(miniUI)
 
 # Define server logic required to draw a histogram
@@ -64,14 +65,14 @@ shinyServer(function(input, output) {
     
     MonthInput <- input$sliderMonth
     
-    
     plot( airquality$Month, 
-           airquality$Temp ,
+          airquality$Temp ,
           
-         xlab = "Months", 
-         ylab = "Temprature" ,
-         bty ="n" ,
-         pch = 16 )
+          xlab = "Months", 
+          ylab = "Temprature" ,
+          bty ="n" ,
+          pch = 16 )
+    
     
     
     
@@ -82,7 +83,7 @@ shinyServer(function(input, output) {
                              newdata = data.frame( Month = 5:9 ,
                                                    Month_new = ifelse(5:9 - 7 > 0 , 5:9 , 0)))
       
-      lines(5:9 , model1lines , col = "blue" , lwd = 2)
+      lines(5:9 , model1lines , col = "blue" , lwd = 2) 
       
     }
     
@@ -106,7 +107,6 @@ shinyServer(function(input, output) {
          ylab = "Temprature" ,
          bty ="n" , 
          pch = 16 )
-    
     
     
     
